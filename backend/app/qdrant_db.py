@@ -41,4 +41,15 @@ def insert_article(article: dict, embedding: list):
         payload=article        # Datos originales del artículo como metadatos
     )
     client.upsert(collection_name=COLLECTION_NAME, points=[point])
+
+# Busca artículos similares basados en un vector de consulta.
+def search_similar_articles(query_vector: list, limit: int = 5):
+    search_result = client.search(
+        collection_name=COLLECTION_NAME,
+        query_vector=query_vector,
+        limit=limit,
+        with_payload=True
+    )
+    return [point.payload for point in search_result]
+
     
