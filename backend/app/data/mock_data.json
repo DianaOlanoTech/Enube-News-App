@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Python lanza nueva versión con mejoras de rendimiento",
+    "content": "La comunidad de Python ha lanzado una nueva versión con mejoras sustanciales...",
+    "categories": ["tecnología", "programación"]
+  },
+  {
+    "title": "Descubrimiento científico abre puertas a nueva medicina",
+    "content": "Un nuevo estudio en biotecnología podría revolucionar el tratamiento del cáncer...",
+    "categories": ["ciencia", "salud"]
+  },
+  {
+    "title": "Avances en inteligencia artificial transforman la industria",
+    "content": "La inteligencia artificial está cambiando la forma en que las empresas operan...",
+    "categories": ["tecnología", "negocios"]
+  },
+  {
+    "title": "Tendencias de moda para la próxima temporada",
+    "content": "Los diseñadores presentan sus propuestas más innovadoras para el próximo año...",
+    "categories": ["moda", "estilo"]
+  },
+  {
+    "title": "El impacto del cambio climático en la agricultura",
+    "content": "Investigaciones recientes muestran cómo el cambio climático afecta la producción de alimentos...",
+    "categories": ["medio ambiente", "agricultura"]
+  },
+  {
+    "title": "Nuevas tecnologías en la educación",
+    "content": "Las herramientas digitales están transformando el aprendizaje en las aulas...",
+    "categories": ["educación", "tecnología"]
+  }
+]
