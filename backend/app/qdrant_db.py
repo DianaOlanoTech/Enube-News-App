@@ -33,6 +33,11 @@ def init_qdrant():
             time.sleep(3)
     raise RuntimeError("Qdrant no está disponible después de varios intentos.")
 
+# Verifica si la colección ya tiene datos para evitar duplicados.
+def collection_has_data() -> bool:
+    count = client.count(collection_name=COLLECTION_NAME, exact=True).count
+    return count > 0
+
 # Inserta un artículo y su embedding en la colección de Qdrant.
 def insert_article(article: dict, embedding: list):
     point = PointStruct(
@@ -41,7 +46,6 @@ def insert_article(article: dict, embedding: list):
         payload=article        # Datos originales del artículo como metadatos
     )
     client.upsert(collection_name=COLLECTION_NAME, points=[point])
-
 
 # Busca artículos similares en la colección de Qdrant usando un vector de consulta.
 def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.5):
