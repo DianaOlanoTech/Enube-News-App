@@ -4,7 +4,7 @@
 # Se encarga de inicializar la base de datos vectorial y cargar artículos de ejemplo al arrancar el servidor.
 
 from fastapi import FastAPI
-from app.ingestInformation import load_mock_articles
+from backend.app.ingest_information import load_mock_articles
 from app.qdrant_db import init_qdrant
 
 # Crea la instancia principal de la aplicación FastAPI
