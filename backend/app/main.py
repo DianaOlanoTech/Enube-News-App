@@ -16,11 +16,10 @@ app = FastAPI()
 # Evento que se ejecuta automáticamente al iniciar la aplicación
 @app.on_event("startup")
 async def startup_event():
-    # Inicializa la base de datos vectorial Qdrant
     init_qdrant()
-    # Carga los artículos de ejemplo y los inserta en la base de datos con sus embeddings
     await load_mock_articles()
 
+# Ruta para buscar artículos similares basados en una consulta de texto
 @app.get("/search", response_model=List[Article])
 async def search_articles(q: str = Query(..., min_length=3)):
     query_vector = generate_embedding(q)

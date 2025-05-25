@@ -12,15 +12,13 @@ DATA_PATH = Path(__file__).parent / "data" / "mock_data.json"
 
 # Función asíncrona para cargar artículos de ejemplo, generar sus embeddings y almacenarlos en la base de datos
 async def load_mock_articles():
-    # Abre el archivo JSON que contiene los artículos de ejemplo
     if collection_has_data():
         print("Artículos ya insertados en la base de datos.")
         return
     
     with open(DATA_PATH, "r") as f:
         articles = json.load(f)
-        
-    # Para cada artículo, genera su embedding y lo inserta en la base de datos
+
     for article in articles:
         embedding = generate_embedding(article["content"])
         insert_article(article, embedding)
