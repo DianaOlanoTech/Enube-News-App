@@ -44,7 +44,7 @@ def insert_article(article: dict, embedding: list):
 
 
 # Busca artículos similares en la colección de Qdrant usando un vector de consulta.
-def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.75):
+def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.5):
     search_result = client.search(
         collection_name=COLLECTION_NAME,
         query_vector=query_vector,
