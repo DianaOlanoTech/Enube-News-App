@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import ArticleModal from "./components/ArticleModal";
-import ArticleCard from "./components/ArticleCard";
 import SearchBar from "./components/SearchBar";
+import ArticleModal from "./components/ArticleModal";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -10,10 +9,22 @@ function App() {
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const api = import.meta.env.VITE_API_URL;
 
+  const fetchAllArticles = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${api}/all`);
+      setArticles(response.data);
+    } catch {
+      setError("No se pudieron cargar los artículos.");
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
-    resetSearch(); // cargar todos los artículos al inicio
+    fetchAllArticles();
   }, []);
 
   const search = async () => {
@@ -29,15 +40,13 @@ function App() {
     setLoading(false);
   };
 
-  const resetSearch = async () => {
+  const openModal = async (id) => {
     setLoading(true);
-    setError(null);
     try {
-      const response = await axios.get(`${api}/all`);
-      setArticles(response.data);
-      setQuery("");
+      const response = await axios.get(`${api}/article/${id}`);
+      setSelectedArticle(response.data);
     } catch {
-      setError("Error al restablecer los artículos.");
+      setError("No se pudo cargar el artículo.");
     }
     setLoading(false);
   };
@@ -54,17 +63,6 @@ function App() {
     setLoading(false);
   };
 
-  const openModal = async (id) => {
-    setLoading(true);
-    try {
-      const response = await axios.get(`${api}/article/${id}`);
-      setSelectedArticle(response.data);
-    } catch {
-      setError("No se pudo cargar el artículo.");
-    }
-    setLoading(false);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 px-4 py-10 md:px-10">
       <div className="max-w-4xl mx-auto">
@@ -72,7 +70,6 @@ function App() {
           📰 Búsqueda Semántica de Noticias
         </h1>
 
-        {/* Input + botones */}
         <SearchBar
           query={query}
           onChange={setQuery}
@@ -86,20 +83,43 @@ function App() {
           <p className="text-center text-gray-400 italic">No se encontraron resultados.</p>
         )}
 
-        {/* Lista de artículos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {articles.map((a, index) => (
-            <ArticleCard
-              key={index}
-              article={a}
-              onShowMore={openModal}
-              onShowSimilar={getSimilar}
-            />
+          {articles.map((a, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-md p-6 transition hover:shadow-lg border border-gray-200"
+            >
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">{a.title}</h2>
+              <p className="text-gray-600 text-sm mb-4 truncate">{a.content}</p>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {a.categories.map((cat, j) => (
+                  <span
+                    key={j}
+                    className="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full"
+                  >
+                    #{cat}
+                  </span>
+                ))}
+              </div>
+              <div className="flex justify-between text-sm">
+                <button
+                  onClick={() => getSimilar(a.id)}
+                  className="text-blue-600 hover:underline"
+                >
+                  Ver similares
+                </button>
+                <button
+                  onClick={() => openModal(a.id)}
+                  className="text-gray-600 hover:underline"
+                >
+                  Ver más
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Modal */}
       <ArticleModal article={selectedArticle} onClose={() => setSelectedArticle(null)} />
     </div>
   );
