@@ -10,7 +10,7 @@ function App() {
     if (!query.trim()) return;
     setLoading(true);
     try {
-      await axios.get(`http://backend:8000/search?q=${query}`);
+      const response = await axios.get(`http://localhost:8000/search?q=${query}`);
       setArticles(response.data);
     } catch (err) {
       console.error("Error al buscar:", err);

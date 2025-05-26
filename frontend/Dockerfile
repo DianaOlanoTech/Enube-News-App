@@ -3,7 +3,7 @@
 # Etapa 1: Construcción de la aplicación con Node.js
 
 # Utiliza una imagen base oficial de Node.js
-FROM node:20-alpine AS build  # Usa una imagen ligera de Node.js para compilar el frontend
+FROM node:20-alpine AS build
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
