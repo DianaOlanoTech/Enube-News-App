@@ -6,13 +6,26 @@
 import time
 from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct, VectorParams, Distance
+from qdrant_client.http import models
 import uuid
 
 # Inicializa el cliente de Qdrant apuntando al host y puerto configurados en Docker.
 client = QdrantClient(host="qdrant", port=6333)
 
 # Nombre de la colección donde se almacenan los artículos
-COLLECTION_NAME = "articles" 
+COLLECTION_NAME = "articles"
+
+# Función para limpiar la colección de artículos en Qdrant
+def clear_collection():
+    client = QdrantClient(host="qdrant", port=6333)
+    client.delete(
+        collection_name="articles",
+        points_selector=models.FilterSelector(
+            filter=models.Filter(
+                must=[]
+            )
+        )
+    )
 
 # Inicializa la colección en Qdrant, creando la colección si no existe.
 def init_qdrant():
@@ -48,7 +61,7 @@ def insert_article(article: dict, embedding: list):
     client.upsert(collection_name=COLLECTION_NAME, points=[point])
 
 # Busca artículos similares en la colección de Qdrant usando un vector de consulta.
-def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.5):
+def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.6):
     search_result = client.search(
         collection_name=COLLECTION_NAME,
         query_vector=query_vector,
