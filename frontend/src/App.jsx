@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import ArticleModal from "./components/ArticleModal";
+import ArticleCard from "./components/ArticleCard";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -84,38 +85,13 @@ function App() {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {articles.map((a, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl shadow-md p-6 transition hover:shadow-lg border border-gray-200"
-            >
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">{a.title}</h2>
-              <p className="text-gray-600 text-sm mb-4 truncate">{a.content}</p>
-              <div className="flex flex-wrap gap-2 mb-3">
-                {a.categories.map((cat, j) => (
-                  <span
-                    key={j}
-                    className="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full"
-                  >
-                    #{cat}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between text-sm">
-                <button
-                  onClick={() => getSimilar(a.id)}
-                  className="text-blue-600 hover:underline"
-                >
-                  Ver similares
-                </button>
-                <button
-                  onClick={() => openModal(a.id)}
-                  className="text-gray-600 hover:underline"
-                >
-                  Ver más
-                </button>
-              </div>
-            </div>
+          {articles.map((a, index) => (
+            <ArticleCard
+              key={index}
+              article={a}
+              onShowMore={openModal}
+              onShowSimilar={getSimilar}
+            />
           ))}
         </div>
       </div>
