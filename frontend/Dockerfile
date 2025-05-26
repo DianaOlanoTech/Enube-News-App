@@ -11,6 +11,9 @@ WORKDIR /app
 # Copia el código fuente y archivos de configuración al contenedor
 COPY . .
 
+# Define el entorno de Node.js como producción para optimizar dependencias y build
+ENV NODE_ENV=production
+
 # Instala las dependencias del frontend
 RUN npm install
 

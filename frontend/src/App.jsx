@@ -6,11 +6,13 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const api = import.meta.env.VITE_API_URL;
+
   const search = async () => {
     if (!query.trim()) return;
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:8000/search?q=${query}`);
+      const response = await axios.get(`${api}/search?q=${query}`);
       setArticles(response.data);
     } catch (err) {
       console.error("Error al buscar:", err);
