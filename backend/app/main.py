@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes import router
-from app.qdrant_db import init_qdrant
+from app.qdrant_db import init_qdrant, clear_collection
 from app.ingest_information import load_mock_articles
 
 app = FastAPI()
@@ -22,6 +22,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
+    clear_collection()
     init_qdrant()
     await load_mock_articles()
 
