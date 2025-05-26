@@ -53,10 +53,11 @@ def collection_has_data() -> bool:
 
 # Inserta un artículo y su embedding en la colección de Qdrant.
 def insert_article(article: dict, embedding: list):
+    uid = str(uuid.uuid4())
     point = PointStruct(
-        id=str(uuid.uuid4()),
+        id=uid,
         vector=embedding,
-        payload=article
+        payload={**article, "id": uid}
     )
     client.upsert(collection_name=COLLECTION_NAME, points=[point])
 
