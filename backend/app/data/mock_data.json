@@ -1,107 +1,67 @@
 [
- {
-    "title": "Avances en inteligencia artificial transforman la industria",
-    "content": "La inteligencia artificial está cambiando la forma en que las empresas operan...",
-    "categories": ["tecnología", "negocios"]
+  {
+    "title": "Python 3.12 revoluciona el rendimiento con optimizaciones en el intérprete",
+    "content": "La última versión de Python, la 3.12, introduce mejoras de rendimiento que aceleran hasta un 20% la ejecución de código. Entre las novedades destacan optimizaciones en el manejo de memoria y un nuevo JIT experimental. La comunidad de desarrolladores celebra estas actualizaciones, que podrían beneficiar especialmente a aplicaciones de ciencia de datos y machine learning.",
+    "categories": ["programación", "open source", "machine learning"]
   },
   {
-    "title": "Tendencias de moda para la próxima temporada",
-    "content": "Los diseñadores presentan sus propuestas más innovadoras para el próximo año...",
-    "categories": ["moda", "estilo"]
+    "title": "Descubren una proteína clave para combatir el cáncer de páncreas",
+    "content": "Científicos del Instituto de Biotecnología de Madrid identificaron la proteína 'AX-200', capaz de inhibir la metástasis en tumores pancreáticos. Los ensayos clínicos en ratones mostraron una reducción del 70% en la propagación de células cancerígenas. Este hallazgo podría dar lugar a nuevos tratamientos para uno de los cánceres más agresivos.",
+    "categories": ["medicina", "investigación científica", "oncología"]
   },
   {
-    "title": "El impacto del cambio climático en la agricultura",
-    "content": "Investigaciones recientes muestran cómo el cambio climático afecta la producción de alimentos...",
-    "categories": ["medio ambiente", "agricultura"]
+    "title": "GPT-5: OpenAI anuncia capacidades multimodales avanzadas",
+    "content": "OpenAI reveló que GPT-5, su próximo modelo de lenguaje, integrará capacidades para procesar audio, video y texto simultáneamente. Según fuentes internas, el sistema podría entender contextos complejos como reuniones empresariales o clases universitarias, marcando un hito en IA generativa. Su lanzamiento está previsto para el primer trimestre de 2024.",
+    "categories": ["inteligencia artificial", "tecnología", "innovación"]
   },
   {
-    "title": "Nuevas tecnologías en la educación",
-    "content": "Las herramientas digitales están transformando el aprendizaje en las aulas...",
-    "categories": ["educación", "tecnología"]
+    "title": "La moda sostenible domina las pasarelas de París 2024",
+    "content": "Diseñadores como Stella McCartney y Marine Serre presentaron colecciones hechas con materiales 100% reciclados en la Semana de la Moda de París. Los tejidos a base de algas marinas y plástico oceánico fueron las estrellas del evento, reflejando un giro radical de la industria hacia la sostenibilidad.",
+    "categories": ["moda", "sostenibilidad", "diseño"]
   },
   {
-    "title": "Avances en la medicina personalizada",
-    "content": "La medicina personalizada está revolucionando el tratamiento de enfermedades crónicas...",
-    "categories": ["salud", "medicina"]
+    "title": "Los cultivos hidropónicos aumentan un 300% en zonas áridas",
+    "content": "Agricultores de Almería reportan que los sistemas hidropónicos les permiten producir hasta tres cosechas anuales de tomates y lechugas, a pesar de las sequías extremas. Esta técnica, que usa un 90% menos de agua que la agricultura tradicional, está siendo adoptada masivamente en regiones con estrés hídrico.",
+    "categories": ["agricultura", "medio ambiente", "tecnología agrícola"]
   },
   {
-    "title": "El auge del comercio electrónico",
-    "content": "El comercio electrónico sigue creciendo a un ritmo acelerado, cambiando la forma en que compramos...",
-    "categories": ["negocios", "tecnología"]
+    "title": "Realidad Virtual en aulas: mejora del 40% en retención estudiantil",
+    "content": "Un estudio de la Universidad de Harvard demostró que el uso de visores VR en clases de historia incrementó la retención de información en estudiantes. Plataformas como 'EduVR' ya ofrecen viajes inmersivos al antiguo Egipto o la Revolución Industrial, transformando la educación tradicional.",
+    "categories": ["educación", "tecnología", "innovación educativa"]
   },
   {
-    "title": "Retos de la sostenibilidad en la industria",
-    "content": "Las empresas enfrentan desafíos significativos para implementar prácticas sostenibles...",
-    "categories": ["medio ambiente", "negocios"]
+    "title": "El teletrabajo reduce un 60% las emisiones de CO2 en grandes ciudades",
+    "content": "Un informe de la ONU revela que la adopción masiva del trabajo remoto disminuyó significativamente el tráfico en urbes como Nueva York y Tokio. Sin embargo, advierten sobre el aumento del consumo energético en hogares, proponiendo bonos verdes para compensar este impacto.",
+    "categories": ["sostenibilidad", "trabajo remoto", "medio ambiente"]
   },
   {
-    "title": "Innovaciones en el transporte urbano",
-    "content": "Nuevas soluciones de movilidad están mejorando la calidad de vida en las ciudades...",
-    "categories": ["transporte", "tecnología"]
+    "title": "Energía eólica marina supera por primera vez a los combustibles fósiles en Europa",
+    "content": "Parques eólicos offshore generaron el 51% de la electricidad en la UE durante el primer semestre de 2024, según datos de WindEurope. Proyectos como 'Dogger Bank' (Reino Unido), con 3.6 GW de capacidad, están impulsando esta transición energética sin precedentes.",
+    "categories": ["energías renovables", "medio ambiente", "política energética"]
   },
   {
-    "title": "El futuro de la inteligencia artificial",
-    "content": "Expertos discuten las implicaciones éticas y sociales de la IA en el futuro...",
-    "categories": ["tecnología", "ética"]
+    "title": "Neurojuegos: la nueva frontera del entretenimiento interactivo",
+    "content": "Compañías como Neuralink y Valve colaboran en videojuegos controlados por ondas cerebrales. Títulos como 'MindQuest' permiten a los usuarios mover objetos con la mente usando interfases BCI (Brain-Computer Interface), abriendo posibilidades para jugadores con discapacidades motoras.",
+    "categories": ["videojuegos", "tecnología", "salud"]
   },
   {
-    "title": "Ciberseguridad: desafíos actuales",
-    "content": "La ciberseguridad se ha convertido en una prioridad para las empresas en la era digital...",
-    "categories": ["tecnología", "negocios"]
+    "title": "Criptodivisas enfrentan nueva regulación global tras acuerdo del G20",
+    "content": "Los países del G20 aprobaron un marco regulatorio común para criptoactivos, exigiendo identificación de usuarios y reservas de capital a exchanges. Esta medida busca prevenir fraudes y lavado de dinero, pero ha generado controversia en comunidades defensoras de la descentralización.",
+    "categories": ["finanzas", "blockchain", "política económica"]
   },
   {
-    "title": "El papel de la inteligencia emocional en el liderazgo",
-    "content": "La inteligencia emocional es clave para un liderazgo efectivo en el entorno laboral actual...",
-    "categories": ["liderazgo", "psicología"]
+    "title": "NFTs pierden un 95% de su valor en 2024",
+    "content": "El mercado de tokens no fungibles colapsó tras el endurecimiento de regulaciones y la saturación de colecciones sin utilidad. Solo proyectos con aplicaciones prácticas (ej: títulos de propiedad digital) sobreviven.",
+    "categories": ["blockchain", "arte digital", "finanzas"]
   },
   {
-    "title": "Tendencias en la industria del entretenimiento",
-    "content": "El entretenimiento digital está evolucionando rápidamente, con nuevas plataformas y formatos...",
-    "categories": ["entretenimiento", "tecnología"]
+    "title": "Los koalas podrían desaparecer para 2050",
+    "content": "Un informe de WWF advierte que la combinación de incendios forestales, deforestación y enfermedades ha reducido la población de koalas en Australia a solo 50,000 ejemplares. Urgen medidas para proteger su hábitat.",
+    "categories": ["medio ambiente", "conservación", "fauna"]
   },
   {
-    "title": "Desarrollo sostenible y energías renovables",
-    "content": "Las energías renovables son fundamentales para un futuro sostenible y combatir el cambio climático...",
-    "categories": ["medio ambiente", "energía"]
-  },
-  {
-    "title": "El impacto de las redes sociales en la sociedad",
-    "content": "Las redes sociales han transformado la comunicación y la interacción social en todo el mundo...",
-    "categories": ["sociedad", "tecnología"]
-  },
-  {
-    "title": "Avances en robótica y automatización",
-    "content": "La robótica está revolucionando diversas industrias, desde la manufactura hasta la atención médica...",
-    "categories": ["tecnología", "industria"]
-  },
-  {
-    "title": "El futuro del trabajo: teletrabajo y flexibilidad",
-    "content": "El teletrabajo se ha convertido en una norma, ofreciendo nuevas oportunidades y desafíos...",
-    "categories": ["trabajo", "tecnología"]
-  },
-  {
-    "title": "Educación financiera: clave para el éxito personal",
-    "content": "La educación financiera es esencial para tomar decisiones informadas sobre el dinero...",
-    "categories": ["finanzas", "educación"]
-  },
-  {
-    "title": "El impacto de la inteligencia artificial en la salud",
-    "content": "La IA está mejorando el diagnóstico y tratamiento de enfermedades, transformando la atención médica...",
-    "categories": ["salud", "tecnología"]
-  },
-  {
-    "title": "Sostenibilidad en la moda: un cambio necesario",
-    "content": "La industria de la moda está adoptando prácticas más sostenibles para reducir su impacto ambiental...",
-    "categories": ["moda", "medio ambiente"]
-  },
-  {
-    "title": "El papel de la tecnología en la educación moderna",
-    "content": "Las tecnologías emergentes están redefiniendo el aprendizaje y la enseñanza en las aulas...",
-    "categories": ["educación", "tecnología"]
-  },
-  {
-    "title": "Desafíos de la privacidad en la era digital",
-    "content": "La privacidad se ha convertido en un tema crítico con el aumento de la vigilancia digital...",
-    "categories": ["privacidad", "tecnología"]
+    "title": "Chips cuánticos de silicio superan a los superconductores",
+    "content": "Intel demostró un procesador cuántico de 12 qubits que opera a temperatura ambiente, eliminando la necesidad de costosos sistemas de refrigeración. Esto acerca la computación cuántica a aplicaciones comerciales.",
+    "categories": ["computación cuántica", "tecnología", "hardware"]
   }
 ]
