@@ -10,8 +10,19 @@ from app.embedding import generate_embedding
 from app.article_schemas import Article
 from typing import List
 
+from fastapi.middleware.cors import CORSMiddleware
+
 # Crea la instancia principal de la aplicación FastAPI
-app = FastAPI()  
+app = FastAPI()
+
+# Configura CORS para permitir solicitudes desde el frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Evento que se ejecuta automáticamente al iniciar la aplicación
 @app.on_event("startup")
