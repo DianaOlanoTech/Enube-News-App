@@ -15,6 +15,17 @@ router = APIRouter()
 def read_root():
     return {"message": "API funcionando correctamente"}
 
+# Ruta para obtener todos los artículos de la colección
+@router.get("/all", response_model=List[Article])
+def get_all_articles():
+    result = client.scroll(
+        collection_name=COLLECTION_NAME,
+        with_payload=True,
+        with_vectors=False,
+        limit=100
+    )
+    return [point.payload for point in result[0]]
+
 # Ruta para buscar artículos similares a partir de una consulta de texto
 @router.get("/search", response_model=List[Article])
 def search_articles(q: str = Query(..., min_length=3)):
