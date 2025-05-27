@@ -22,7 +22,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
-    clear_collection()
+    '''clear_collection()'''
     init_qdrant()
     await load_mock_articles()
 
