@@ -73,6 +73,38 @@ Esto levantará:
 - Abre tu navegador en [http://localhost:3000](http://localhost:3000) para acceder al frontend.
 - La API del backend está disponible en [http://localhost:8000](http://localhost:8000)
 
+## 🖥️ Uso Local con Docker (sin despliegue en producción)
+
+Este proyecto está diseñado y preparado para ejecutarse de forma local en tu computadora mediante Docker y Docker Compose.
+
+### 🧩 ¿Qué implica esto?
+- No necesitas realizar ningún despliegue en servicios como Vercel, Fly.io o AWS.
+- Toda la infraestructura (frontend, backend y base de datos vectorial) se ejecuta localmente en contenedores.
+- El acceso a la aplicación se hace mediante el navegador, ingresando a [http://localhost:3000](http://localhost:3000).
+
+### ⚙️ Variables de entorno
+Las variables de entorno del frontend ya están preconfiguradas para que apunten al backend local:
+
+```env
+# frontend/.env y frontend/.env.production
+VITE_API_URL=http://localhost:8000
+```
+Esto permite que el frontend pueda comunicarse con el backend al ejecutarse en Docker.
+
+### 🚀 Levantar el sistema localmente
+Solo necesitas el siguiente comando desde la raíz del proyecto:
+
+```bash
+# Levanta todos los servicios en modo local
+docker-compose up --build
+```
+
+Y luego acceder a:
+
+- 🔵 Frontend: [http://localhost:3000](http://localhost:3000)
+- 🟠 Backend (API): [http://localhost:8000](http://localhost:8000)
+- 🟢 Qdrant Dashboard (opcional): [http://localhost:6333/dashboard](http://localhost:6333/dashboard)
+
 ## 📁 Estructura de Carpetas
 
 ```
