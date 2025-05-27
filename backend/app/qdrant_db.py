@@ -1,7 +1,7 @@
 # qdrant_db.py
 
 # Este módulo gestiona la conexión y operaciones con la base de datos vectorial Qdrant.
-# Permite inicializar la colección de artículos y almacenar artículos con sus embeddings para búsquedas semánticas.
+# Permite inicializar la colección de artículos y realizar operaciones de inserción y búsqueda de artículos similares.
 
 import time
 from qdrant_client import QdrantClient
@@ -53,15 +53,16 @@ def collection_has_data() -> bool:
 
 # Inserta un artículo y su embedding en la colección de Qdrant.
 def insert_article(article: dict, embedding: list):
+    uid = str(uuid.uuid4())
     point = PointStruct(
-        id=str(uuid.uuid4()),
+        id=uid,
         vector=embedding,
-        payload=article
+        payload={**article, "id": uid}
     )
     client.upsert(collection_name=COLLECTION_NAME, points=[point])
 
 # Busca artículos similares en la colección de Qdrant usando un vector de consulta.
-def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.6):
+def search_similar_articles(query_vector: list, limit: int = 5, score_threshold: float = 0.3):
     search_result = client.search(
         collection_name=COLLECTION_NAME,
         query_vector=query_vector,

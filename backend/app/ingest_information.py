@@ -14,11 +14,9 @@ DATA_PATH = Path(__file__).parent / "data" / "mock_data.json"
 async def load_mock_articles():
     clear_collection()
 
-    """
-        if collection_has_data():
-            print("Artículos ya insertados en la base de datos.")
-            return
-    """
+    if collection_has_data():
+        print("Artículos ya insertados en la base de datos.")
+        return
     
     print("Insertando artículos mock en Qdrant...")
     
@@ -26,5 +24,6 @@ async def load_mock_articles():
         articles = json.load(f)
 
     for article in articles:
-        embedding = generate_embedding(article["content"])
-        insert_article(article, embedding)   
+        text = f"{article['title']}. {article['content']}"
+        embedding = generate_embedding(text)
+        insert_article(article, embedding)
