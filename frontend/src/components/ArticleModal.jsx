@@ -1,11 +1,15 @@
 // components/ArticleModal.jsx
 
+// Componente modal para mostrar los detalles completos de un artículo seleccionado.
+// Se muestra sobre el resto de la interfaz y permite cerrar el modal con un botón.
+
 export default function ArticleModal({ article, onClose }) {
-  if (!article) return null;
+  if (!article) return null; // No renderiza nada si no hay artículo seleccionado
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex items-center justify-center">
       <div className="bg-white rounded-xl shadow-xl max-w-xl w-full p-6 relative">
+        {/* Botón para cerrar el modal */}
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-lg"

@@ -1,5 +1,9 @@
 // components/ArticleCard.jsx
 
+// Componente que muestra la información resumida de un artículo en una tarjeta visual.
+// Permite ver las categorías, el título, un resumen del contenido y 
+// ofrece acciones para ver más detalles o buscar artículos similares.
+
 export default function ArticleCard({ article, onShowMore, onShowSimilar }) {
   return (
     <div className="bg-white rounded-xl shadow-md p-6 transition hover:shadow-lg border border-gray-200">
@@ -15,6 +19,8 @@ export default function ArticleCard({ article, onShowMore, onShowSimilar }) {
           </span>
         ))}
       </div>
+      
+      {/* Acciones: ver similares y ver más detalles */}
       <div className="flex justify-between text-sm">
         <button
           onClick={() => onShowSimilar(article.id)}
