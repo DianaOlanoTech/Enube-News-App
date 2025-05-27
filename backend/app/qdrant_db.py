@@ -1,7 +1,7 @@
 # qdrant_db.py
 
 # Este módulo gestiona la conexión y operaciones con la base de datos vectorial Qdrant.
-# Permite inicializar la colección de artículos y almacenar artículos con sus embeddings para búsquedas semánticas.
+# Permite inicializar la colección de artículos y realizar operaciones de inserción y búsqueda de artículos similares.
 
 import time
 from qdrant_client import QdrantClient

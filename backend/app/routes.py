@@ -6,7 +6,6 @@ from typing import List
 from app.embedding import generate_embedding
 from app.qdrant_db import search_similar_articles, client, COLLECTION_NAME
 from app.article_schemas import Article
-from qdrant_client.http.models import WithPayloadInterface
 
 router = APIRouter()
 
