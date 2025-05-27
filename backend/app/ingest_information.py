@@ -13,10 +13,10 @@ DATA_PATH = Path(__file__).parent / "data" / "mock_data.json"
 # Función asíncrona para cargar artículos de ejemplo, generar sus embeddings y almacenarlos en la base de datos
 async def load_mock_articles():
     clear_collection()
-    
-    '''if collection_has_data():
+
+    if collection_has_data():
         print("Artículos ya insertados en la base de datos.")
-        return'''
+        return
     
     print("Insertando artículos mock en Qdrant...")
     
