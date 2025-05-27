@@ -35,9 +35,9 @@ Aplicación de búsqueda semántica de noticias con arquitectura fullstack (Fast
 - En el frontend se implementó una interfaz intuitiva que permite:
   - Buscar por texto
   - Ver artículos similares
-  - Abrir detalle de artículos en un modal
+  - Abrir el detalle de artículos en un modal
   - Filtrar por categoría
-  - Resetear la búsqueda para ver todos los artículos nuevamente
+  - Restablecer la búsqueda para ver todos los artículos nuevamente
 
 ## 🚀 Instrucciones de Instalación y Ejecución
 
@@ -45,7 +45,7 @@ Aplicación de búsqueda semántica de noticias con arquitectura fullstack (Fast
 
 ```bash
 # Clona el repositorio
-git clone <https://github.com/tu-usuario/enube-news-app.git>
+git clone https://github.com/tu-usuario/enube-news-app.git
 cd Enube-News-App
 ```
 
