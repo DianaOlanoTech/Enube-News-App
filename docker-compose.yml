@@ -1,7 +1,7 @@
 # docker-compose.yml
 
 # Orquesta los servicios necesarios para el desarrollo local de Enube-News-App.
-# Define dos servicios: backend (API FastAPI) y qdrant (base de datos vectorial).
+# Define dos servicios: backend (API FastAPI), qdrant (motor de búsqueda) y frontend (interfaz de usuario).
 
 services:
   backend:
@@ -17,3 +17,10 @@ services:
     image: qdrant/qdrant  # Usa la imagen oficial de Qdrant
     ports:
       - "6333:6333"  # Expone el puerto de Qdrant para acceso desde el backend
+  
+  frontend:
+    build: ./frontend # Construye la imagen Docker usando el Dockerfile en ./frontend
+    ports:
+      - "3000:80" # Expone el puerto 80 del contenedor al puerto 3000 del host
+    depends_on:
+      - backend # Espera a que el servicio backend esté listo antes de iniciar
