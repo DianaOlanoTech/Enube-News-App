@@ -18,6 +18,7 @@ function App() {
     try {
       const response = await axios.get(`${api}/all`);
       setArticles(response.data);
+      setQuery("");
     } catch {
       setError("No se pudieron cargar los artículos.");
     }
@@ -51,6 +52,8 @@ function App() {
     }
     setLoading(false);
   };
+
+  
 
   const getSimilar = async (id) => {
     setLoading(true);
